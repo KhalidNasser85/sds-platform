@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>وصل — دليل الاستخدام</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#f2f4f8;color:#1c2733;line-height:1.7}
+.top{background:#0f3460;color:#fff;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.top h1{font-size:1.35em;display:flex;align-items:center;gap:10px}
+.top .ver{background:#16213e;border:1px solid #2a4a7a;border-radius:20px;padding:3px 12px;font-size:.8em;color:#9fc2ee}
+.wrap{display:grid;grid-template-columns:230px 1fr;max-width:1200px;margin:20px auto;padding:0 16px;gap:20px}
+nav{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);padding:12px;height:fit-content;position:sticky;top:16px}
+nav a{display:block;color:#1c2733;text-decoration:none;padding:8px 12px;border-radius:8px;font-size:.92em;border-right:3px solid transparent}
+nav a:hover{background:#eef4fb;border-right-color:#0f3460}
+main{min-width:0}
+h2{color:#0f3460;font-size:1.25em;margin:0 0 6px;border-bottom:3px solid #0f3460;padding-bottom:6px}
+h3{color:#14532d;font-size:1.05em;margin:16px 0 6px}
+section{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);padding:20px 22px;margin-bottom:18px}
+p{margin:6px 0}
+ul,ol{margin:6px 0 6px 22px}
+li{margin:3px 0}
+code{background:#eef3f9;border:1px solid #d8e2ee;border-radius:5px;padding:1px 7px;font-family:Consolas,monospace;font-size:.88em;color:#0f3460;direction:ltr;unicode-bidi:embed}
+pre{background:#0d1520;color:#9fe8b1;padding:12px 14px;border-radius:8px;overflow:auto;direction:ltr;text-align:left;font-family:Consolas,monospace;font-size:.85em;white-space:pre-wrap;word-break:break-all;margin:8px 0}
+table{width:100%;border-collapse:collapse;font-size:.9em;margin:8px 0}
+th{background:#f7f9fc;color:#4a5a6a;text-align:right}
+th,td{padding:8px 10px;border:1px solid #e6ecf3;vertical-align:top}
+.badge{display:inline-block;padding:2px 10px;border-radius:14px;font-size:.75em;font-weight:bold;color:#fff}
+.b-ok{background:#27ae60}.b-alert{background:#c0392b}.b-warn{background:#f2994a}.b-info{background:#2980b9}.b-off{background:#b1bcc8}
+.note{background:#fdf6ec;border-right:4px solid #f2994a;padding:10px 14px;border-radius:8px;margin:10px 0;font-size:.92em}
+.ok{background:#eafaf1;border-right:4px solid #27ae60;padding:10px 14px;border-radius:8px;margin:10px 0;font-size:.92em}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.92em;margin:8px 0}
+.flow .step{background:#0f3460;color:#fff;border-radius:20px;padding:4px 12px;font-weight:bold}
+.flow .arr{color:#0f3460;font-weight:bold}
+.q{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:8px 0}
+.q .port{background:#f7f9fc;border:1px solid #e6ecf3;border-radius:10px;padding:10px 12px;text-align:center}
+.q .port b{display:block;font-size:1.2em;color:#0f3460}
+.q .port span{color:#7a8798;font-size:.78em}
+.kbd{background:#fff;border:1px solid #ccd5df;border-bottom-width:2px;border-radius:5px;padding:1px 7px;font-family:Consolas,monospace;font-size:.85em;direction:ltr}
+a.file{color:#0f3460;font-weight:bold;text-decoration:none;border-bottom:1px dashed #0f3460}
+.back{display:block;text-align:left;margin-top:14px;color:#2980b9;text-decoration:none;font-size:.85em}
+img{max-width:100%}
+@media(max-width:820px){.wrap{grid-template-columns:1fr}nav{position:static}}
+@media print{nav{display:none}.back{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>وصل &nbsp;|&nbsp; دليل الاستخدام</h1>
+  <span class="ver">الإصدار 0.8.0 · المرحلة ٧ (سجل موقّع + Onboarding + MON + تهجير)</span>
+</header>
+
+<div class="wrap">
+<nav>
+  <a href="#intro">١) مقدمة ومنصّصة</a>
+  <a href="#login">٢) الدخول والأدوار</a>
+  <a href="#dashboard">٣) لوحة التحكم</a>
+  <a href="#mon">٤) المراقبة (MON)</a>
+  <a href="#companies">٥) إدارة الشركات</a>
+  <a href="#agent">٦) العامل والاتصال</a>
+  <a href="#registry">٧) السجل الموقّع والتهجير</a>
+  <a href="#security">٨) الأمان والعمليات اليومية</a>
+  <a href="#reference">٩) مرجع سريع</a>
+</nav>
+
+<main>
+
+<section id="intro">
+  <h2>١) مقدمة ومكوّنات المنصة</h2>
+  <p>منصّة <b>«وصل»</b> تُدير الربط الآمن بين الشركات ولوحتها المركزية: لكل شركة <b>عامل (Agent)</b> يفتح قنوات أنفاق (نفق سريع عبر TryCloudflare) لخدماتها، ويُوقّع حالةً (نبضًا) بشكل دوري، وتسجَّل الشركات في <b>سجل موقّع</b> مركزي يحرس دورياً ضد التلاعب والتدرُّج.</p>
+  <h3>المكوّنات</h3>
+  <ul>
+    <li><b>لوحة التحكم المركزية (Center)</b> — واجهة الويب المحلية للعمليات والدخول برُتَب.</li>
+    <li><b>العامل (Agent)</b> — يعمل لدى كل شركة: قنوات + نبض موقّع + صيانة.</li>
+    <li><b>قنوات الأنفاق</b> — web · mobile · ops (صيانة) · db (قاعدة بيانات، اختياري).</li>
+    <li><b>السجل الموقّع (Registry)</b> — قائمة الشركات بإصدار رتيب وتوقيع، مع حارس تدرّج وعدّاد صلاحية.</li>
+    <li><b>المراقبة (MON)</b> — تُحدَّث تلقائيًا كل 15 ثانية؛ تنبيه إن تأخر النبض عن 40 ثانية أو خَبُث التوقيع.</li>
+    <li><b>مُصدِر الحالة (Gist)</b> — جهة خارجية لنشر الحالة الموقّعة (اختياري للنشر العام).</li>
+  </ul>
+  <div class="q">
+    <div class="port"><b>/login</b><span>بوابة الدخول</span></div>
+    <div class="port"><b>/</b><span>لوحة التحكم</span></div>
+    <div class="port"><b>/monitor/:code</b><span>صفحة مراقبة الشركة</span></div>
+    <div class="port"><b>/api/monitor</b><span>حالة كل الشركات (JSON)</span></div>
+    <div class="port"><b>/api/registry</b><span>السجل الموقّع (JSON)</span></div>
+  </div>
+</section>
+
+<section id="login">
+  <h2>٢) الدخول والأدوار</h2>
+  <p>افتح المتصفح على <code>/login</code> وأدخل اسم المستخدم وكلمة المرور.</p>
+  <h3>قواعد الأمان</h3>
+  <ul>
+    <li>بعد <b>5 محاولات</b> فاشلة يُقفَل الدخول مؤقتًا (رد <code>429</code>).</li>
+    <li>عند أول دخول (أو عند طلب المشغِّل) تظهر شاشة <b>تغيير كلمة المرور إلزاميًا</b> قبل أي إجراء.</li>
+    <li>الجلسات قصيرة العمر مع كوكيز <b>HttpOnly</b>؛ يُسجَّل كل دخول/خروج في السجل.</li>
+  </ul>
+  <h3>الأدوار وصلاحياتها</h3>
+  <table>
+    <thead><tr><th>الصلاحية</th><th>مدير (Admin)</th><th>مشرف (Supervisor)</th><th>مطّلع (Viewer)</th></tr></thead>
+    <tbody>
+      <tr><td>عرض لوحة التحكم والمراقبة (MON)</td><td>✔</td><td>✔</td><td>✔</td></tr>
+      <tr><td>تشغيل/إيقاف/إعادة/فحص/نشر القنوات</td><td>✔</td><td>—</td><td>—</td></tr>
+      <tr><td>الترخيص L1 (إنشاء/تجديد/تعليق/سحب)</td><td>✔</td><td>—</td><td>—</td></tr>
+      <tr><td>الخزنة (عرض/تدوير/تصدير)</td><td>✔</td><td>—</td><td>—</td></tr>
+      <tr><td>Onboarding شركة جديدة + تعديل السجل</td><td>✔</td><td>—</td><td>—</td></tr>
+      <tr><td>الصيانة (Ops) — تنفيذ</td><td>✔</td><td>—</td><td>—</td></tr>
+      <tr><td>الصيانة — سحب السجلات (logs)</td><td>✔</td><td>✔</td><td>—</td></tr>
+      <tr><td>قاعدة البيانات — تقارير/قراءة (db.report, db.sql.read)</td><td>✔</td><td>✔</td><td>✔</td></tr>
+      <tr><td>قاعدة البيانات — عمليات مرخّصة (db.op)</td><td>✔</td><td>✔</td><td>—</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="dashboard">
+  <h2>٣) لوحة التحكم</h2>
+  <p>تُعرض تلقائيًا بعد الدخول، وتحتوي بطاقة <b>«شركات على المنصة»</b>:</p>
+  <table>
+    <thead><tr><th>العمود</th><th>ماذا يعرض</th></tr></thead>
+    <tbody>
+      <tr><td>الرمز</td><td>رمز الشركة (رابط لصفحتها)</td></tr>
+      <tr><td>الاسم / البيئة</td><td>الاسم التعريفي وبيئة التشغيل (مثل DEV)</td></tr>
+      <tr><td>الويب / الجوال</td><td>حالة القناة: <span class="badge b-ok">يعمل</span> أو <span class="badge b-fail" style="background:#eb5757">متوقف</span> أو <span class="badge b-off">معطل</span> + رابط النفق العام</td></tr>
+      <tr><td>MON / آخر نبض</td><td><span class="badge b-ok">معافى</span> أو <span class="badge b-alert">تنبيه</span>، وشارة التوقيع عند عطله، مع زمن آخر نبض وعدد إعادة التشغيل</td></tr>
+      <tr><td>الإجراءات</td><td>أزرار حسب صلاحيتك: تشغيل/إيقاف/إعادة/فحص/نشر، صيانة، DB، خزنة، ترخيص، مراقبة، Onboard جديد</td></tr>
+    </tbody>
+  </table>
+  <p>أسفلها بطاقة <b>«سجل الأحداث»</b> (آخر 30 حدثًا): الزمن، الحدث، الشركة، المستخدم، النتيجة.</p>
+  <div class="ok">✔ شارة <b>«التوقيع»</b> في عمود MON تؤكد أن الحالة المقروءة موقّعة بمفتاح الشركة وصالحة؛ إن ظهرت «خاطئ/منتهي» فالمفاتيح غير متطابقة أو العقد منتهي.</div>
+</section>
+
+<section id="mon">
+  <h2>٤) المراقبة (MON)</h2>
+  <p>صفحة <code>/monitor/:code</code> تعرض بطاقة MON للشركة وتتحدّث <b>كل 15 ثانية</b>.</p>
+  <h3>الدورة</h3>
+  <ol>
+    <li>العامل ينشر <b>نبضًا موقّعًا كل 30 ثانية</b> (نسخة محلية: <code>companies\&lt;code&gt;\logs\status.json</code>).</li>
+    <li>المركز يتحقق من التوقيع بمفتاح الشركة العام ومن <b>عمر النبض</b>.</li>
+    <li>إن لم يصل نبض صحيح خلال <b>≤ 40 ثانية</b> → حالة <span class="badge b-alert">ALERT</span>.</li>
+  </ol>
+  <h3>قراءة البطاقة</h3>
+  <table>
+    <thead><tr><th>الحقل</th><th>المعنى</th></tr></thead>
+    <tbody>
+      <tr><td>النبض / العمر</td><td>زمن آخر نبض و«عمره» بالثواني (≤40 طبيعي)</td></tr>
+      <tr><td>إعادة التشغيل</td><td>عداد <code>restart_count</code> — يزداد عند كل تشغيل للعامل (طبيعي)</td></tr>
+      <tr><td>نسخة الحالة</td><td>رقم الحالة الموقّعة الحالية</td></tr>
+      <tr><td>التوقيع</td><td><span class="badge b-ok">صحيح</span> أو حالة الخلل (خاطئ/منتهي/…)</td></tr>
+    </tbody>
+  </table>
+  <div class="note">⚠ لوح = <b>تنبيه</b>. تحقق من القنوات أدناه (يعمل/متوقف) ومن الخدمات المُعلنة، ثم أعد تشغيل العامل (قسم ٦).</div>
+  <h3>التصرف عند ALERT</h3>
+  <ol>
+    <li>افتح صفحة الشركة في اللوحة ← زر <b>مراقبة</b> لتشخيص القناة المتعثرة.</li>
+    <li>إذا كانت الخوادم المحلية حيّة، أعد فتح النفق من اللوحة (<b>تشغيل/إعادة</b>) أو تلقائيًا عبر العامل.</li>
+    <li>إذا عاد النبض، ينعكس الوضع إلى <span class="badge b-ok">معافى</span> تلقائيًا؛ عداد إعادة التشغيل يزداد — سلوك مقصود ومقيّد بالسجل.</li>
+  </ol>
+</section>
+
+<section id="companies">
+  <h2>٥) إدارة الشركات</h2>
+  <h3>Onboarding شركة جديدة (مدير)</h3>
+  <p>زر <b>«Onboard جديد»</b> — يُنفَّذ محليًا على جهاز المشغِّل (وليس عبر النفق العام):</p>
+  <div class="flow"><span class="step">١ توفير (Provision)</span><span class="arr">←</span><span class="step">٢ تسجيل (Register)</span><span class="arr">←</span><span class="step">٣ تفعيل (Activate)</span></div>
+  <p>توفير الإعداد والمفاتيح والخزنة (مفتاح RSA-2048 لكل شركة) ثم تسجيل وتفعيل في السجل الموقّع. حقول اللوحة:</p>
+  <ul>
+    <li><b>الرمز</b> (مثل <code>DEV02</code>) · <b>الاسم</b> · <b>البيئة</b></li>
+    <li>منافذ محلية: <b>ويب</b> (افتراضيّ 8100) · <b>جوال</b> (8200) · <b>صيانة</b> (9555) · <b>وصل</b> (9550)</li>
+    <li><b>تفعيل قاعدة البيانات</b> (اختياري، قناة db على 9446)</li>
+  </ul>
+  <div class="ok">✔ بعد النجاح تظهر رسالة «الشركة جاهزة (config/keys/vault + مسجلة وفعّالة)» وتحدَّث اللوحة.</div>
+  <h3>أزرار القنوات</h3>
+  <table>
+    <thead><tr><th>الزر</th><th>المفعول</th></tr></thead>
+    <tbody>
+      <tr><td>تشغيل / إيقاف</td><td>فتح أو إغلاق قناة الويب (مع حفظ رابط النفق)</td></tr>
+      <tr><td>إعادة</td><td>إغلاق وفتح القناة (أسرع علاج للانقطاع الخارجي)</td></tr>
+      <tr><td>فحص</td><td>تحقق ٦ نقاط: الخدمة المحلية، عملية النفق، الرابط العام، تطابق مصدِّر الحالة، سالمة نقطة الصحة، وتوقيع الحالة</td></tr>
+      <tr><td>نشر</td><td>إعادة نشر عنوان القناة إلى جهة خارجية (Gist)</td></tr>
+    </tbody>
+  </table>
+  <h3>الصيانة (Ops)</h3>
+  <p>عمليات مرخّصة: حالة/إعادة تشغيل الخدمة، حالة/إعادة تشغيل النفق، فحص الصحة، قائمة السجلات، سحب سجل، حالة القرص.</p>
+  <h3>قاعدة البيانات (DB)</h3>
+  <p>اختر تقريرًا معتمدًا (§7)، أدخل المعاملات، شغّله، وصَدِّر <b>CSV / XLSX / PDF</b>. العمليات المرخّصة (allowlist محدودة مثل <code>license.count</code>) تظهر لمن يملك <code>db.op</code>.</p>
+  <h3>الخزنة (Vault)</h3>
+  <p>عرض محدود من صلاحيات المدير: حالة الخزنة، وضع/تحديث قيمة سرية، <b>تدوير</b> المفتاح (مع نسخة احتياطية مشفّرة بمفتاح الاسترداد أولًا)، تصدير. التخزين AES-256-GCM محليًا.</p>
+  <h3>الترخيص (L1)</h3>
+  <p>إنشاء/تجديد/تخفيض/تعليق/سحب/إنهاء الترخيص؛ توقيعه ثابت بالمفتاح المركزي ولا يُعاد تخليق إلّا عند تغيير الحقول الجوهرية (مثال <code>MS-1001-AUTO</code>). تخفيض المقاعد مع مستخدمين نشطين مرفوض (<code>E_LICENSE_DOWNGRADE</code>).</p>
+</section>
+
+<section id="agent">
+  <h2>٦) العامل والاتصال</h2>
+  <p>لكل شركة مجلد <code>companies\&lt;code&gt;\</code> يحتوي الإعداد والمفاتيح والخزنة والسجلات.</p>
+  <h3>أوامر العامل</h3>
+  <pre>node agent\agent.js --company &lt;CODE&gt; --command run       # تشغيل: قنوات + نبض موقّع
+node agent\agent.js --company &lt;CODE&gt; --command stop      # إيقاف نظيف
+node agent\agent.js --company &lt;CODE&gt; --command selftest   # فحص ذاتي (مفاتيح/سجل/قنوات) — 45/45
+node agent\agent.js --company &lt;CODE&gt; --command seed      # حقن الأسرار من env إلى الخزنة</pre>
+  <h3>ماذا يفعل عند التشغيل</h3>
+  <ul>
+    <li>يفتح القنوات المحلية (<code>web 8100</code>، <code>mobile 8200</code>، <code>ops 9555</code>، واختياريًّا <code>db 9446</code>).</li>
+    <li>يُوقّع الحالة كل 30 ثانية إلى المِرآة المحلية <code>companies\&lt;code&gt;\logs\status.json</code> (وتتضمن النبض، نسخة الحالة، الخدمات، عداد إعادة التشغيل، والتوقيع).</li>
+    <li>يزيد عداد <code>logs\restart_count.txt</code> عند كل تشغيل — يظهر في اللوحة وMON.</li>
+    <li>يعيد فتح النفق ذاتيًا عند الانقطاع ويُحافظ على الرابط الخارجي.</li>
+  </ul>
+  <div class="note">⚠ الخطأ <code>fail 5/5</code> مع الصحّة المحلية جيدة = النفق الخارجي بحاجة لإعادة؛ ابدأ من لوحة المركز (إعادة) أو أعد تشغيل العامل.</div>
+</section>
+
+<section id="registry">
+  <h2>٧) السجل الموقّع والتهجير</h2>
+  <p>السجل في <code>registry\registry.json</code> (+ <code>state.json</code> + <code>switchover.json</code>) بصيغة موقّعة:</p>
+  <table>
+    <thead><tr><th>الميزة</th><th>السلوك</th></tr></thead>
+    <tbody>
+      <tr><td>إصدار رتيب</td><td>كل نشر يرفع <code>version</code> (الحالي <code>v6</code>)</td></tr>
+      <tr><td>حارس التدرّج</td><td>أي محاولة رجوع لإصدار أقدم تُرفض (<code>E_ROLLBACK_REJECTED</code>)</td></tr>
+      <tr><td>انتهاء الصلاحية</td><td>بعد تجاوز نافذة الصلاحية تظهر حالة <code>expired</code> ويُعاد النشر من جديد</td></tr>
+      <tr><td>التلاعب</td><td>تغيير أي حقل يكسر التوقيع → <code>invalid</code> ويرفض</td></tr>
+    </tbody>
+  </table>
+  <p>حالة الاعتماد عبر <code>GET /api/registry</code>: <code>verify.status=valid</code> وكل الشركات الأعضاء <code>active</code>.</p>
+  <h3>تهجير الناشر (VB Switchover)</h3>
+  <p>عند تبديل مزوّد الحالة من نظام قديم إلى العامل الجديد: <b>يتوقف الكاتب القديم أولًا</b>، ثم يعتمد <code>sds-agent</code> ككاتب واحد — لا كاتبين في نفس الوقت. يُسجَّل ذلك في <code>registry\switchover.json</code> مع حدث <code>vb.switchover</code> في سجل الشركة.</p>
+</section>
+
+<section id="security">
+  <h2>٨) الأمان والعمليات اليومية</h2>
+  <h3>الأصول السرية</h3>
+  <ul>
+    <li>مفتاح توقيع L1 وGist token: من البيئة/الخزنة فقط، <b>لا عبر الأنفاق العامة ولا في الملفات المتتبَّعة</b>.</li>
+    <li>خزنات الشركات <code>companies\*\vault</code> خارج التحكم بالمصدر (مُستثناة تلقائيًا).</li>
+    <li>المنافذ الداخلية (9555/9550/9446) غير مكشوفة للعموم؛ الجهة الخارجية فقط روابط القنوات العامة.</li>
+  </ul>
+  <h3>فحص يومي مقترح</h3>
+  <ol>
+    <li><code>GET /api/monitor</code> — كل الشركات <code>OK</code>، <code>heartbeat_age_s ≤ 40</code>، <code>signature=valid</code>.</li>
+    <li><code>GET /api/registry</code> — <code>verify.status=valid</code> والشركات <code>active</code>.</li>
+    <li>راجع سجلات الأحداث: <code>vault\center-logs\audit.jsonl</code> و <code>companies\&lt;code&gt;\logs\audit.jsonl</code>.</li>
+    <li>افحص التقرير الصحي للقنوات (زر «فحص») دوريًّا للشركات المهمة.</li>
+  </ol>
+  <h3>الأعراض الشائعة</h3>
+  <table>
+    <thead><tr><th>العَرَض</th><th>العلامة</th><th>الإجراء</th></tr></thead>
+    <tbody>
+      <tr><td>شركة في تنبيه</td><td><code>heartbeat_age_s &gt; 40</code></td><td>أعد تشغيل العامل (<code>--command run</code>)؛ عداد إعادة التشغيل يزداد — مقصود</td></tr>
+      <tr><td>نبض متقطع</td><td>ينبض ثم يموت</td><td>فحص <code>logs\agent.log</code> والصحة المحلية للخوادم</td></tr>
+      <tr><td>توقيع <code>invalid</code></td><td>نبض حديث لكن فشل التوقيع</td><td>مفاتيح غير متطابقة — راجع <code>companies\&lt;code&gt;\keys</code></td></tr>
+      <tr><td>انقطاع خارجي</td><td><code>PUBLIC_URL / HEALTH_ENDPOINT FAIL</code></td><td>أعد فتح النفق من اللوحة؛ العامل يعيد الفتح ذاتيًا</td></tr>
+      <tr><td>فشل نشر الحالة الخارجية</td><td>القنوات 5/5 لكن <code>GIST_MATCH</code> خطأ</td><td>تحقق من الرمز في خزنة العامل (<code>--command seed</code> من env)</td></tr>
+      <tr><td>حجب خارجي لمزوّد الحالة</td><td><code>ERROR:E_NETWORK</code></td><td>بيئي/شبكة — أعد المحاولة؛ المسار المحلي والموقّع يعملان (تحقق من مرآة <code>status.json</code>)</td></tr>
+    </tbody>
+  </table>
+  <h3>الإيقاف الآمن والاستعادة</h3>
+  <p>إيقاف عامل: <code>--command stop</code> ثم <code>run</code> للعودة (يستأنف النبض خلال 30 ثانية وتُعاد فتح الأنفاق ذاتيًا). إيقاف المركز: أنهِ <code>node center.js</code>؛ السجل الموقّع محفوظ على القرص ولا يفقد شيئًا.</p>
+</section>
+
+<section id="reference">
+  <h2>٩) مرجع سريع</h2>
+  <h3>المنافذ الافتراضية الموثقة</h3>
+  <div class="q">
+    <div class="port"><b>4200</b><span>لوحة التحكم المركزية</span></div>
+    <div class="port"><b>8100</b><span>قناة الويب المحلية</span></div>
+    <div class="port"><b>8200</b><span>قناة الجوال المحلية</span></div>
+    <div class="port"><b>9555</b><span>قناة الصيانة (Ops)</span></div>
+    <div class="port"><b>9550</b><span>قناة الوصل (Hub)</span></div>
+    <div class="port"><b>9446</b><span>قناة قاعدة البيانات (اختياري)</span></div>
+  </div>
+  <h3>مفاتيح اختصار الأوامر</h3>
+  <table>
+    <thead><tr><th>الأمر</th><th>الغرض</th></tr></thead>
+    <tbody>
+      <tr><td><code>selftest</code></td><td>فحص ذاتي شامل (إجمالي 45/45: القنوات + السجل + توقيع النبض)</td></tr>
+      <tr><td><code>run / stop</code></td><td>تشغيل/إيقاف العامل</td></tr>
+      <tr><td><code>seed</code></td><td>تعبئة الخزنة من المتغيرات البيئية</td></tr>
+      <tr><td><code>onboard</code> (لوحة)</td><td>توفير + تسجيل + تفعيل شركة جديدة</td></tr>
+    </tbody>
+  </table>
+  <h3>المراجع والوثائق</h3>
+  <ul>
+    <li>دليل التشغيل: <a class="file" href="operations-manual.md" target="_blank">operations-manual.md</a></li>
+    <li>دليل التثبيت: <a class="file" href="installation-guide.md" target="_blank">installation-guide.md</a></li>
+    <li>سجل التغييرات: <a class="file" href="CHANGELOG.md" target="_blank">CHANGELOG.md</a> (الإصدار 0.8.0)</li>
+    <li>أدلة القبول: <a class="file" href="evidence/phase-7/acceptance.json" target="_blank">evidence/phase-7</a> (31/31)</li>
+  </ul>
+  <a href="#intro" class="back">↑ العودة لأعلى</a>
+</section>
+
+</main>
+</div>
+
+</body>
+</html>
